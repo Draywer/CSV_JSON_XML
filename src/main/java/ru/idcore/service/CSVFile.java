@@ -1,5 +1,7 @@
 package ru.idcore.service;
 
+import com.opencsv.CSVParser;
+import com.opencsv.CSVParserBuilder;
 import com.opencsv.CSVWriter;
 
 import java.io.File;
@@ -16,7 +18,8 @@ public class CSVFile {
 
     public static void createCSVFile(String str, String pathCSVFile, Delimiter delimiter, boolean b) throws IOException {
         boolean result = false;
-        String[] csvStrings = str.split(delimiter.getDelimiter());
+        CSVParser csvParser = new CSVParserBuilder().withSeparator(delimiter.getDelimiter()).build();
+        String[] csvStrings = str.split(csvParser.toString());
         try(CSVWriter csvWriter = new CSVWriter(new FileWriter(pathCSVFile, b))) {
             csvWriter.writeNext(csvStrings);
         }

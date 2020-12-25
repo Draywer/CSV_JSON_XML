@@ -1,18 +1,18 @@
 package ru.idcore.service;
 
 public enum Delimiter {
-    DELIMITER_COMMA(","),
-    DELIMITER_COLON(":"),
-    DELIMITER_SEMICOLON(";"),
-    DELIMITER_PIPE("|");
+    DELIMITER_COMMA(','),
+    DELIMITER_COLON(':'),
+    DELIMITER_SEMICOLON(';'),
+    DELIMITER_PIPE('|');
 
-    public String delimiter;
+    public Character delimiter;
 
-    Delimiter(String delimiter) {
+    Delimiter(Character delimiter) {
         this.delimiter = delimiter;
     }
 
-    public String getDelimiter() {
+    public Character getDelimiter() {
         return delimiter;
     }
 
