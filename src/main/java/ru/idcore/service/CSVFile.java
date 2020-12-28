@@ -19,7 +19,10 @@ public abstract class CSVFile<T> {
 
     public List<T> getCSVObj(String fileName, Character separator) throws FileNotFoundException {
         return new CsvToBeanBuilder<T>(new FileReader(fileName))
-                .withType(getTType()).withSeparator(separator).build().parse();
+                .withType(getTType())
+                .withSeparator(separator)
+                .build()
+                .parse();
 
     }
 
