@@ -20,7 +20,6 @@ public abstract class CSVFile<T> {
           return new CsvToBeanBuilder<T>(new FileReader(fileName))
                 .withType(getTType())
                 .withSeparator(separator)
-                  .withIgnoreLeadingWhiteSpace(true)
                 .build()
                 .parse();
 
