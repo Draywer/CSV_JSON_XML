@@ -1,6 +1,5 @@
 package ru.idcore.service;
 
-
 import com.opencsv.bean.CsvToBeanBuilder;
 
 import java.io.FileNotFoundException;
@@ -18,9 +17,10 @@ public abstract class CSVFile<T> {
     }
 
     public List<T> getCSVObj(String fileName, Character separator) throws FileNotFoundException {
-        return new CsvToBeanBuilder<T>(new FileReader(fileName))
+          return new CsvToBeanBuilder<T>(new FileReader(fileName))
                 .withType(getTType())
                 .withSeparator(separator)
+                  .withIgnoreLeadingWhiteSpace(true)
                 .build()
                 .parse();
 
