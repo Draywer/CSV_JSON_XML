@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="csv-json-xml-lib" />
+        <module name="CSV_JSON_XML" />
       </profile>
     </annotationProcessing>
   </component>
